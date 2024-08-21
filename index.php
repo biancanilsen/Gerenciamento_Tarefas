@@ -10,10 +10,10 @@
     <h1 class="page-title">Gerenciador de Tarefas</h1>
     <button onclick="openModal()">Criar Nova Tarefa</button>
 
-    <form id="modal" class="modal hidden">
+    <form id="modal" class="modal hidden" action="create_task.php" method="post">
         <div>
             <label for="form-description">Descrição </label>
-            <input type="text" name="form-description">
+            <input type="text" name="form-description" id="form-description">
         </div>
         <div>
             <label for="form-deadline">Data de Conclusão </label>
@@ -22,12 +22,14 @@
 
         <div class="modal-buttons">
             <button type="button" onclick="closeModal()">Fechar</button>
-            <button>Criar</button>
+            <button type="submit">Criar</button>
         </div>
     </form>
 
     <div class="task-list">
-        <?php include 'get_tasks.php'; ?>
+        <?php ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL); include 'read_tasks.php'; ?>
     </div>
 
     <script src="script.js"></script>
