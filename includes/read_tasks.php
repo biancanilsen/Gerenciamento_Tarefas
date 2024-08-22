@@ -10,8 +10,8 @@
                 echo '<div class="task">';
                 echo '<span class="deadline">' . date("d/m/Y", strtotime($row["dateTask"])) . '</span>';
                 echo '<p class="description">' . htmlspecialchars($row["description"]) . '</p>';
-                echo '<img src="./icons/edit.svg" alt="Editar">';
-                echo '<img src="./icons/delete.svg" alt="Excluir">';
+                echo '<img src="../icons/edit.svg" alt="Editar">';
+                echo '<img src="../icons/delete.svg" alt="Excluir">';
                 echo '</div>';
             }
         } else {
