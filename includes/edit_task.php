@@ -4,7 +4,7 @@ include 'get_task.php';
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $task = getTaskById($conn, $id, $tablename);
+    $task = getTaskById($id, $tablename);
 
     if ($task === null) {
         die("Tarefa não encontrada.");
