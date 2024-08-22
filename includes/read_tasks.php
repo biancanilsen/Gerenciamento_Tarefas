@@ -1,6 +1,6 @@
 <ul>
     <?php
-    include 'connection.php';
+    include '../config/connection.php';
 
     $stmt = $conn->prepare("SELECT * FROM $tablename");
     if ($stmt->execute()) {
@@ -10,8 +10,8 @@
                 echo '<div class="task">';
                 echo '<span class="deadline">' . date("d/m/Y", strtotime($row["dateTask"])) . '</span>';
                 echo '<p class="description">' . htmlspecialchars($row["description"]) . '</p>';
-                echo '<img src="./icons/edit.svg" alt="Editar">';
-                echo '<img src="./icons/delete.svg" alt="Excluir">';
+                echo '<a href="../includes/edit_task.php?id=' . $row["id"] . '"><img src="../icons/edit.svg" alt="Editar"></a>';
+                echo '<a href="../includes/delete_task.php?id=' . $row["id"] . '"><img src="../icons/delete.svg" alt="Excluir"></a>';
                 echo '</div>';
             }
         } else {

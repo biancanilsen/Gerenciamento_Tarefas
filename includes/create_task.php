@@ -1,6 +1,6 @@
 <?php
 
-include 'connection.php';
+include '../config/connection.php';
 
 // Verificar se o formulário foi submetido
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("ss", $description, $dateTask);
 
     if ($stmt->execute()) {
-        header("Location: index.php");
+        header("Location: ../public/index.php");
         exit();
     } else {
         echo "Erro: " . $stmt->error;

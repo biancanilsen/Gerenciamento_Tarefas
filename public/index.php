@@ -10,7 +10,7 @@
     <h1 class="page-title">Gerenciador de Tarefas</h1>
     <button onclick="openModal()">Criar Nova Tarefa</button>
 
-    <form id="modal" class="modal hidden" action="create_task.php" method="post">
+    <form id="modal" class="modal hidden" action="../includes/create_task.php" method="post">
         <div>
             <label for="form-description">Descrição </label>
             <input type="text" name="form-description" id="form-description">
@@ -27,9 +27,13 @@
     </form>
 
     <div class="task-list">
-        <?php ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL); include 'read_tasks.php'; ?>
+        <?php
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
+
+        include '../includes/read_tasks.php';
+        ?>
     </div>
 
     <script src="script.js"></script>
