@@ -10,7 +10,7 @@
     <h1 class="page-title">Gerenciador de Tarefas</h1>
     <button onclick="openModal()">Criar Nova Tarefa</button>
 
-    <form id="modal" class="modal hidden" action="create_task.php" method="post">
+    <form id="modal" class="modal hidden" action="../includes/create_task.php" method="post">
         <div>
             <label for="form-description">Descrição </label>
             <input type="text" name="form-description" id="form-description">
