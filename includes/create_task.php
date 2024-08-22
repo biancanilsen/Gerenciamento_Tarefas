@@ -1,6 +1,6 @@
 <?php
 
-include 'connection.php';
+include '../config/connection.php';
 
 // Verificar se o formulário foi submetido
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

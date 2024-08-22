@@ -1,6 +1,6 @@
 <ul>
     <?php
-    include 'connection.php';
+    include '../config/connection.php';
 
     $stmt = $conn->prepare("SELECT * FROM $tablename");
     if ($stmt->execute()) {

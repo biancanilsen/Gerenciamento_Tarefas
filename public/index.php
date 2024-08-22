@@ -27,9 +27,13 @@
     </form>
 
     <div class="task-list">
-        <?php ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL); include 'read_tasks.php'; ?>
+        <?php
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
+
+        include '../includes/read_tasks.php';
+        ?>
     </div>
 
     <script src="script.js"></script>

@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "root";
 $dbname = "taskManager";
 $tablename = "task";
 
