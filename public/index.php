@@ -8,9 +8,10 @@
 </head>
 <body>
     <h1 class="page-title">Gerenciador de Tarefas</h1>
-    <button onclick="openModal()">Criar Nova Tarefa</button>
+    <button onclick="openCreateEditModal()" class="modal-create-btn">Criar Nova Tarefa</button>
 
-    <form id="modal" class="modal hidden" action="../includes/create_task.php" method="post">
+    <form id="modal-create-edit" class="modal hidden" method="post">
+        <input type="hidden" name="id" id="form-id">
         <div>
             <label for="form-description">Descrição </label>
             <input type="text" name="form-description" id="form-description">
@@ -21,8 +22,16 @@
         </div>
 
         <div class="modal-buttons">
-            <button type="button" onclick="closeModal()">Fechar</button>
-            <button type="submit">Criar</button>
+            <button type="button" onclick="closeModal('create-edit')" class="cancel-btn">Fechar</button>
+            <button type="submit" class="create-btn" id="form-submit-btn">Criar</button>
+        </div>
+    </form>
+
+    <form id="modal-delete" class="modal hidden" method="post">
+        <p>Confirmar exclusão da tarefa: <span id="task-description"></span>?</p>
+        <div class="modal-buttons">
+            <button type="button" onclick="closeModal('delete')" class="cancel-btn">Cancelar</button>
+            <button type="submit" class="delete-btn">Confirmar</button>
         </div>
     </form>
 
