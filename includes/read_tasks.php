@@ -10,8 +10,14 @@
                 echo '<div class="task">';
                 echo '<span class="deadline">' . date("d/m/Y", strtotime($row["dateTask"])) . '</span>';
                 echo '<p class="description">' . htmlspecialchars($row["description"]) . '</p>';
-                echo '<a href="../includes/edit_task.php?id=' . $row["id"] . '"><img src="../icons/edit.svg" alt="Editar"></a>';
-                echo '<a href="../includes/delete_task.php?id=' . $row["id"] . '"><img src="../icons/delete.svg" alt="Excluir"></a>';
+                echo 
+                    '<button onclick="openCreateEditModal(' . $row["id"] . ', \'' . htmlspecialchars($row["description"], ENT_QUOTES) . '\', \'' . $row["dateTask"] . '\')" class="edit-icon">
+                        <img src="../icons/edit.svg" alt="Editar">
+                    </button>';
+                echo 
+                    '<button onclick="openDeleteModal(' . $row["id"] . ', \'' . htmlspecialchars($row["description"], ENT_QUOTES) . '\')" class="delete-icon">
+                        <img src="../icons/delete.svg" alt="Excluir">
+                    </button>';
                 echo '</div>';
             }
         } else {

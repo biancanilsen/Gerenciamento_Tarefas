@@ -22,21 +22,66 @@ body {
     align-items: center;
 }
 
-button, input[type=submit] {
-    background-color: #2C5364;
+/* Buttons */
+button {
+    background-color: #1d4455;
     padding: 8px 12px;
-    border: 1px solid #1a343f;;
+    border-width: 1px;
+    border-style: solid;
     border-radius: 6px;
     box-shadow: 0px 2px 4px 0px rgb(31, 31, 31, .7);
     transition: 0.2s;
     cursor: pointer;
 }
 
-button:hover, input[type=submit]:hover {
-    background-color: #1d3946;
+button:hover {
+    background-color: #122a35;
+}
+
+.modal-create-btn {
+    font-size: 1.3rem;
+    padding: 12px 16px;
+    border: 2px solid #061e29;
+}
+
+.create-btn {
+    background-color: #319f66;
+    border-color: #0d3621;
+}
+
+.create-btn:hover {
+    background-color: #1a613c;
+}
+
+.edit-btn {
+    background-color: #d39819;
+    border-color: #3f2d07;
+}
+
+.edit-btn:hover {
+    background-color: #7e5807;
+}
+
+.cancel-btn {
+    background-color: #758695;
+    border-color: #2a3036;
+}
+
+.cancel-btn:hover {
+    background-color: #45505a;
+}
+
+.delete-btn {
+    background-color: #b61818;
+    border-color: #520a0a;
+}
+
+.delete-btn:hover {
+    background-color: #6d0909;
 }
 
 .page-title {
+    font-size: 2.5rem;
     margin: 30px;
 }
 
@@ -67,8 +112,8 @@ button:hover, input[type=submit]:hover {
     animation-timing-function: ease;
 }
 
-.modal > div:first-child {
-    margin-bottom: 20px;
+#modal-create-edit > div:first-of-type {
+    margin-bottom: 25px;
 }
 
 input {
@@ -83,7 +128,7 @@ input {
 }
 
 .modal-buttons {
-    margin-top: 50px;
+    margin-top: 45px;
     text-align: right;
 }
 
@@ -107,41 +152,48 @@ input {
     margin-top: 40px;
     display: flex;
     flex-direction: column;
-    row-gap: 12px;
 }
 
 .task {
     width: 100%;
     display: flex;
     align-items: center;
-    height: 50px;
     background-color: #264d5f;
     color: #c3d9ed;
     border-radius: 8px;
+    margin-bottom: 12px;
 }
 
 .deadline {
-    height: 100%;
-    padding: 0px 10px;
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #0F2027;
     color: inherit;
-    line-height: 50px;
-    text-align: center;
-    width: 125px;
+    min-width: 125px;
     border-radius: 8px 0 0 8px;
 }
 
 .description {
-    padding: 10px;
+    padding: 15px 10px;
     color: inherit;
 }
 
-.task img:first-of-type {
-    margin-left: auto;
+.edit-icon, .delete-icon {
+    height: 40px;
+    border: 0;
     cursor: pointer;
 }
 
-.task img:last-of-type {
-    margin: 0 10px;
-    cursor: pointer
+.edit-icon {
+    margin: 8px 0 8px auto;
+}
+
+.delete-icon {
+    margin: 8px 10px;
+}
+
+#task-description {
+    font-weight: bold;
 }
